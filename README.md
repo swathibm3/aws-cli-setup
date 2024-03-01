@@ -1,15 +1,15 @@
-Install and Configure AWS CLI on a Red Hat Linux instance and interact with AWS Identity and Access Management
+**Install and Configure AWS CLI on a Red Hat Linux instance and interact with AWS Identity and Access Management**
 
-Objective:
+**Objective:**
 * Install and configure the AWS CLI.
 * Connect the AWS CLI to an AWS account.
 * Access IAM by using the AWS CLI.
 
-Architecture:
+**Architecture:**
 
 ![Architecture](https://github.com/swathibm3/aws-cli-setup/blob/main/archi.png)
 
-Step 1 - Connect to the Red Hat EC2 instance by using SSH
+**Step 1 - Connect to the Red Hat EC2 instance by using SSH**
 1. Download PuTTY to use an SSH utility to connect to the EC2 instance. 
 2. Open putty.exe.
 3. Configure the PuTTY timeout to keep the PuTTY session open for a longer period of time:
@@ -28,7 +28,10 @@ o Choose Open again.
 5. In the PuTTY Security Alert window, choose Accept to trust and connect to the host.
 6. When prompted with login as, enter ec2-user and press Enter. This step connects you to the EC2 instance.
 
-Step 2: Install the AWS CLI on a Red Hat Linux instance
+   ![image](https://github.com/swathibm3/aws-cli-setup/assets/159441818/4247f2a5-304f-4a01-abf6-f9f71d88be2a)
+
+
+**Step 2: Install the AWS CLI on a Red Hat Linux instance**
 1. To install the AWS CLI on a Red Hat Linux instance using the curl command and to write the downloaded file to the current directory, run the following curl command with the -o option:
 
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -53,7 +56,8 @@ The following is an example of the output:
 aws-cli/2.15.24 Python/3.11.6 Linux/4.14.336-256.559.amzn2.x86_64 exe/x86_64.amzn.2 prompt/off
 
 
-Step 3: Observe IAM configuration details in the AWS Management Console
+**Step 3: Observe IAM configuration details in the AWS Management Console**
+
 We have created the IAM configuration details for the EC2 instance in the AWS Management Console. 
 1. In the AWS Management Console, in the Search box, enter IAM and choose IAM. This option takes you to the IAM console page.
 2. In the navigation pane, choose Users, and then choose awsstudent. 
@@ -62,7 +66,8 @@ This lab_policy document is formatted in JSON. The IAM policy grants the awsstud
 4. Choose the Security credentials tab. In the Access keys section, locate the awsstudent user's access key ID. 
 Note: Once the access key is created, you must save the secret access key locally at the time that the key is created. For this lab, you can find the access key ID and the secret access key in the Details dropdown list at the top of these instructions. 
 
-Step 4: Configure the AWS CLI to connect to your AWS Account
+**Step 4: Configure the AWS CLI to connect to your AWS Account**
+
 In the SSH session terminal window, run the configure command for the AWS CLI:
 aws configure
 At the prompt, configure the following:
@@ -73,7 +78,7 @@ d. Default output format: Enter json
 
 
 
-Step 5: Observe the IAM configuration details for the EC2 instance using the AWS CLI.
+**Step 5: Observe the IAM configuration details for the EC2 instance using the AWS CLI.**
 
 In the terminal window, test the IAM configuration by running the following command:
 
@@ -83,7 +88,7 @@ In the terminal window, test the IAM configuration by running the following comm
 A successful test shows a JSON response that includes a list of IAM users in the account.
 
 
-Step 6: Download the lab_policy document in a JSON-formatted IAM policy document using CLI
+**Step 6: Download the lab_policy document in a JSON-formatted IAM policy document using CLI**
 
 Step 1:  List the IAM policies and filter customer managed policies:
 
@@ -114,7 +119,7 @@ Command : aws iam get-policy-version --policy-arn arn:aws:iam::***********:polic
 Step 4: View the file by using cat command
 
 
-Conclusion:
+**Conclusion:**
 
 Successfully installed the AWS CLI on a Red Hat Linux instance and connected it to an AWS account. Used the AWS CLI to retrieve policy information by referencing AWS documentation.
 
