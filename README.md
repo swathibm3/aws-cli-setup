@@ -7,6 +7,7 @@ Objective:
 
 Architecture:
 
+![Uploading image.png…]()
 
 Step 1 - Connect to the Red Hat EC2 instance by using SSH
 1. Download PuTTY to use an SSH utility to connect to the EC2 instance. 
